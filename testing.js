@@ -63,6 +63,61 @@ function animateSvgIcons() {
   requestAnimationFrame(animateSvgIcons);
 }
 
+// ========== LOCALSTORAGE CUSTOMER CRUD ========== //
+function getCustomers() {
+  return JSON.parse(localStorage.getItem('customerList') || '[]');
+}
+function saveCustomers(list) {
+  localStorage.setItem('customerList', JSON.stringify(list));
+}
+function renderCustomerList() {
+  const list = getCustomers();
+  const tbody = document.getElementById('customer-list-body');
+  tbody.innerHTML = '';
+  list.forEach((c, i) => {
+    tbody.innerHTML += `<tr>
+      <td>${c.nama}</td>
+      <td>${c.telefon}</td>
+      <td>${c.tarikh}</td>
+      <td>${c.masa}</td>
+      <td>
+        <button onclick="editCustomer(${i})">Edit</button>
+        <button onclick="deleteCustomer(${i})">Hapus</button>
+      </td>
+    </tr>`;
+  });
+}
+function addCustomer(cust) {
+  const list = getCustomers();
+  list.push(cust);
+  saveCustomers(list);
+  renderCustomerList();
+}
+function deleteCustomer(idx) {
+  if (!confirm('Padam customer ini?')) return;
+  const list = getCustomers();
+  list.splice(idx, 1);
+  saveCustomers(list);
+  renderCustomerList();
+}
+function editCustomer(idx) {
+  const list = getCustomers();
+  const c = list[idx];
+  const nama = prompt('Nama:', c.nama);
+  if (nama === null) return;
+  const telefon = prompt('Telefon:', c.telefon);
+  if (telefon === null) return;
+  const tarikh = prompt('Tarikh:', c.tarikh);
+  if (tarikh === null) return;
+  const masa = prompt('Masa:', c.masa);
+  if (masa === null) return;
+  list[idx] = { nama, telefon, tarikh, masa };
+  saveCustomers(list);
+  renderCustomerList();
+}
+window.deleteCustomer = deleteCustomer;
+window.editCustomer = editCustomer;
+
 document.addEventListener('DOMContentLoaded', function() {
   const bg = document.querySelector('.bg-icons');
   if (!bg) return;
@@ -71,4 +126,27 @@ document.addEventListener('DOMContentLoaded', function() {
     bg.appendChild(createSvgIcon());
   }
   animateSvgIcons();
+  renderCustomerList();
+
+  // Supabase booking form handler
+  const bookingForm = document.querySelector('.booking-form');
+  if (bookingForm && typeof supabase !== 'undefined') {
+    bookingForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const nama = this.nama.value;
+      const telefon = this.telefon.value;
+      const tarikh = this.tarikh.value;
+      const masa = this.masa.value;
+      const { data, error } = await supabase
+        .from('booking')
+        .insert([{ nama, telefon, tarikh, masa }]);
+      if (!error) {
+        alert('Tempahan berjaya! Kami akan hubungi anda.');
+        this.reset();
+        addCustomer({ nama, telefon, tarikh, masa });
+      } else {
+        alert('Ralat tempahan! Sila cuba lagi.');
+      }
+    });
+  }
 }); 

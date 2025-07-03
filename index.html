@@ -61,6 +61,29 @@
   <div class="footer">
     &copy; 2024 Ayun Barbershop. Semua Hak Cipta Terpelihara.
   </div>
+  <div class="customer-list-section">
+    <h3>Senarai Customer</h3>
+    <table class="customer-table">
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Telefon</th>
+          <th>Tarikh</th>
+          <th>Masa</th>
+          <th>Tindakan</th>
+        </tr>
+      </thead>
+      <tbody id="customer-list-body">
+        <!-- Data akan diisi oleh JS -->
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script>
+    const SUPABASE_URL = 'https://cgbyvgqmsjsrgqmihdas.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNnYnl2Z3Ftc2pzcmdxbWloZGFzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1MjM0ODUsImV4cCI6MjA2NzA5OTQ4NX0.ELpKSRFJWpz4lfyfr3lv3V_pD1Vd1rN2bEtNa_PxaPA';
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  </script>
   <script src="testing.js"></script>
 </body>
 </html>
