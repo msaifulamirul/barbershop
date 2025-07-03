@@ -34,18 +34,9 @@
     <h3>Tentang Barbershop</h3>
     <p>Selamat datang ke <b>Ayun Barbershop</b>! Saya Ayun, owner dan barber berpengalaman. Barbershop kami menawarkan suasana moden, selesa, dan servis potongan rambut terbaik untuk semua peringkat umur. Setiap pelanggan adalah keutamaan kami. Jom dapatkan gaya rambut yang kemas dan yakin bersama kami!</p>
   </div>
-  <div class="services-section">
-    <h3>Servis Kami</h3>
-    <ul class="services-list">
-      <li><i class="fa-solid fa-scissors"></i> Potongan Rambut Lelaki</li>
-      <li><i class="fa-solid fa-razor"></i> Shaving & Beard Trim</li>
-      <li><i class="fa-solid fa-spray-can"></i> Styling & Wash</li>
-      <li><i class="fa-solid fa-child"></i> Potongan Kanak-kanak</li>
-    </ul>
-  </div>
   <div class="service-price-section">
     <h3>Senarai Servis & Harga</h3>
-    <table class="service-price-table">
+    <table class="service-price-table highlight-table">
       <thead>
         <tr>
           <th>Servis</th>
@@ -66,11 +57,19 @@
   <div class="contact-section" id="contact">
     <h3>Tempahan & Contact</h3>
     <form class="booking-form" autocomplete="off">
-      <input type="text" name="nama" placeholder="Nama Anda" required />
-      <input type="tel" name="telefon" placeholder="No. Telefon" required />
-      <input type="date" name="tarikh" required />
-      <input type="time" name="masa" required />
-      <button type="submit">Hantar Tempahan</button>
+      <table class="highlight-table" style="width:100%;margin-bottom:18px;">
+        <tr>
+          <td><input type="text" name="nama" placeholder="Nama Anda" required /></td>
+          <td><input type="tel" name="telefon" placeholder="No. Telefon" required /></td>
+        </tr>
+        <tr>
+          <td><input type="date" name="tarikh" required /></td>
+          <td><input type="time" name="masa" required /></td>
+        </tr>
+        <tr>
+          <td colspan="2"><button type="submit" style="width:100%;">Hantar Tempahan</button></td>
+        </tr>
+      </table>
     </form>
     <div class="contact-info">
       <p><i class="fa-solid fa-phone"></i> 012-3456789</p>
@@ -85,7 +84,7 @@
       <button id="customer-filter-btn">Filter Hari Ini</button>
       <button id="customer-reset-btn">Reset</button>
     </div>
-    <table class="customer-table">
+    <table class="customer-table highlight-table">
       <thead>
         <tr>
           <th>Nama</th>

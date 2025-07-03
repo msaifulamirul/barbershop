@@ -581,4 +581,25 @@ body {
   .service-price-table th, .service-price-table td { font-size: 0.95rem; padding: 6px 2px; }
   .customer-list-controls input[type="text"] { font-size: 0.92rem; }
   .customer-list-controls button { font-size: 0.92rem; }
+}
+
+.highlight-table {
+  background: #fff !important;
+  border: 2.5px solid #111 !important;
+  box-shadow: 0 4px 32px #1112, 0 1px 8px #fff4;
+}
+.highlight-table th, .highlight-table td {
+  font-size: 1.08rem;
+  color: #111;
+  border: 1.5px solid #222 !important;
+  background: #fff !important;
+}
+.highlight-table th {
+  background: #f2f2f2 !important;
+  font-weight: 800;
+  font-size: 1.13rem;
+  letter-spacing: 1px;
+}
+@media (max-width: 600px) {
+  .highlight-table th, .highlight-table td { font-size: 0.98rem; }
 } 
