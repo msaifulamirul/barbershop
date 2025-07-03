@@ -1,0 +1,112 @@
+{
+  "Selangor": {
+    "jumlah": 5,
+    "senarai": [
+      "Ayun Barbershop",
+      "The Classic Cut",
+      "Urban Fade Studio",
+      "Gentlemen's Den",
+      "Barber Bros"
+    ]
+  },
+  "Kuala Lumpur": {
+    "jumlah": 4,
+    "senarai": [
+      "KL Barber Co.",
+      "MetroGroom",
+      "Chop & Shave",
+      "City Fade Barbershop"
+    ]
+  },
+  "Johor": {
+    "jumlah": 3,
+    "senarai": [
+      "Southern Blades",
+      "JB Gents",
+      "Barber Legacy"
+    ]
+  },
+  "Penang": {
+    "jumlah": 3,
+    "senarai": [
+      "Penang Barber House",
+      "Georgetown Gents",
+      "The Fade Room"
+    ]
+  },
+  "Perak": {
+    "jumlah": 2,
+    "senarai": [
+      "Ipoh Barber Studio",
+      "Silver State Cuts"
+    ]
+  },
+  "Sabah": {
+    "jumlah": 2,
+    "senarai": [
+      "Kota Kinabalu Barbers",
+      "Borneo Fade"
+    ]
+  },
+  "Sarawak": {
+    "jumlah": 2,
+    "senarai": [
+      "Kuching Clippers",
+      "Sarawak Gents"
+    ]
+  },
+  "Kelantan": {
+    "jumlah": 1,
+    "senarai": [
+      "Kelate Barber"
+    ]
+  },
+  "Terengganu": {
+    "jumlah": 1,
+    "senarai": [
+      "Ganu Gents"
+    ]
+  },
+  "Pahang": {
+    "jumlah": 1,
+    "senarai": [
+      "Pahang Barber House"
+    ]
+  },
+  "Negeri Sembilan": {
+    "jumlah": 1,
+    "senarai": [
+      "Seremban Cuts"
+    ]
+  },
+  "Melaka": {
+    "jumlah": 1,
+    "senarai": [
+      "Melaka Fade"
+    ]
+  },
+  "Perlis": {
+    "jumlah": 1,
+    "senarai": [
+      "Perlis Barber"
+    ]
+  },
+  "Kedah": {
+    "jumlah": 1,
+    "senarai": [
+      "Kedah Clippers"
+    ]
+  },
+  "Putrajaya": {
+    "jumlah": 1,
+    "senarai": [
+      "Putrajaya Gents"
+    ]
+  },
+  "Labuan": {
+    "jumlah": 1,
+    "senarai": [
+      "Labuan Barber"
+    ]
+  }
+} 
