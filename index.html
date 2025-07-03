@@ -43,6 +43,26 @@
       <li><i class="fa-solid fa-child"></i> Potongan Kanak-kanak</li>
     </ul>
   </div>
+  <div class="service-price-section">
+    <h3>Senarai Servis & Harga</h3>
+    <table class="service-price-table">
+      <thead>
+        <tr>
+          <th>Servis</th>
+          <th>Harga (RM)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Potongan Rambut Lelaki</td><td>25</td></tr>
+        <tr><td>Potongan Kanak-kanak</td><td>20</td></tr>
+        <tr><td>Shaving & Beard Trim</td><td>15</td></tr>
+        <tr><td>Styling & Wash</td><td>15</td></tr>
+        <tr><td>Potongan Rambut + Beard</td><td>35</td></tr>
+        <tr><td>Hair Tattoo/Design</td><td>30 - 50</td></tr>
+        <tr><td>Facial Treatment</td><td>40</td></tr>
+      </tbody>
+    </table>
+  </div>
   <div class="contact-section" id="contact">
     <h3>Tempahan & Contact</h3>
     <form class="booking-form" autocomplete="off">
@@ -58,11 +78,13 @@
       <p><i class="fa-solid fa-instagram"></i> <a href="#" style="color:#111;">@ayunbarbershop</a></p>
     </div>
   </div>
-  <div class="footer">
-    &copy; 2024 Ayun Barbershop. Semua Hak Cipta Terpelihara.
-  </div>
   <div class="customer-list-section">
     <h3>Senarai Customer</h3>
+    <div class="customer-list-controls">
+      <input type="text" id="customer-search" placeholder="Cari nama/telefon..." />
+      <button id="customer-filter-btn">Filter Hari Ini</button>
+      <button id="customer-reset-btn">Reset</button>
+    </div>
     <table class="customer-table">
       <thead>
         <tr>
@@ -77,6 +99,9 @@
         <!-- Data akan diisi oleh JS -->
       </tbody>
     </table>
+  </div>
+  <div class="footer">
+    &copy; 2024 Ayun Barbershop. Semua Hak Cipta Terpelihara.
   </div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script>

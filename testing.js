@@ -70,8 +70,24 @@ function getCustomers() {
 function saveCustomers(list) {
   localStorage.setItem('customerList', JSON.stringify(list));
 }
+let customerSearchTerm = '';
+let customerFilterToday = false;
+
 function renderCustomerList() {
-  const list = getCustomers();
+  let list = getCustomers();
+  // Filter ikut search
+  if (customerSearchTerm) {
+    const term = customerSearchTerm.toLowerCase();
+    list = list.filter(c =>
+      c.nama.toLowerCase().includes(term) ||
+      c.telefon.toLowerCase().includes(term)
+    );
+  }
+  // Filter ikut hari ini
+  if (customerFilterToday) {
+    const today = new Date().toISOString().slice(0, 10);
+    list = list.filter(c => c.tarikh === today);
+  }
   const tbody = document.getElementById('customer-list-body');
   tbody.innerHTML = '';
   list.forEach((c, i) => {
@@ -147,6 +163,31 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         alert('Ralat tempahan! Sila cuba lagi.');
       }
+    });
+  }
+
+  // Search & filter event
+  const searchInput = document.getElementById('customer-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      customerSearchTerm = this.value;
+      renderCustomerList();
+    });
+  }
+  const filterBtn = document.getElementById('customer-filter-btn');
+  if (filterBtn) {
+    filterBtn.addEventListener('click', function() {
+      customerFilterToday = true;
+      renderCustomerList();
+    });
+  }
+  const resetBtn = document.getElementById('customer-reset-btn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function() {
+      customerSearchTerm = '';
+      customerFilterToday = false;
+      if (searchInput) searchInput.value = '';
+      renderCustomerList();
     });
   }
 }); 
